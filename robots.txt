@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dmvthrowers.github.io/YYBC-YoYo-Boomer-Club-/sitemap.xml
