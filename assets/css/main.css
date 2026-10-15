@@ -70,8 +70,8 @@ main { background: var(--paper); background-image: repeating-linear-gradient(0de
 /* Sections */
 section { padding: 52px 0; border-bottom: 3px solid var(--ink); }
 h2 { display: inline-block; font-family: var(--cut-a); font-weight: normal; font-size: clamp(1.7rem, 6vw, 2.6rem); line-height: 1.1; text-transform: uppercase; letter-spacing: .03em; background: var(--ink); color: var(--paper); padding: 4px 14px; margin: 0 0 20px; transform: rotate(-1.5deg); }
-#booms h2 { transform: rotate(1deg); }
-#what-we-do h2 { transform: rotate(-.5deg); }
+#calendar h2 { transform: rotate(1deg); }
+#business h2 { transform: rotate(-.5deg); }
 h3 { font-family: var(--cut-a); font-weight: normal; font-size: 1.35rem; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 6px; }
 .lead { font-family: var(--hand); font-size: 1.35rem; line-height: 1.45; max-width: 40rem; }
 
