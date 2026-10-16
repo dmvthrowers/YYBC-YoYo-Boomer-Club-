@@ -39,9 +39,9 @@ a:hover, a:focus { background: var(--ink); color: var(--paper); text-decoration:
 /* Header: the zine's top strip */
 .site-header { background: var(--paper); border-bottom: 3px solid var(--ink); }
 .site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding-top: 12px; padding-bottom: 12px; }
-.brand { display: inline-flex; align-items: center; gap: 8px; color: var(--paper); background: var(--ink); text-decoration: none; font-family: var(--cut-a); font-size: 1.5rem; letter-spacing: .08em; padding: 2px 12px; transform: rotate(-2deg); }
-.brand svg { width: 24px; height: 24px; flex: none; }
-.brand:hover, .brand:focus { background: var(--ink); color: var(--paper); transform: rotate(2deg); }
+.brand { display: inline-block; line-height: 0; text-decoration: none; transform: rotate(-1.5deg); }
+.brand img { display: block; width: auto; height: 64px; }
+.brand:hover, .brand:focus { background: none; transform: rotate(1.5deg); }
 .nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 18px; }
 .nav a { font-family: var(--type); font-weight: 700; font-size: .85rem; letter-spacing: .14em; text-decoration: none; padding: 2px 4px; }
 
