@@ -1,16 +1,21 @@
 /* YYBC — photocopied zine. Black ink on cheap paper, cut-and-paste type, tape and stamps.
    No shadows, no rounded corners, no external fonts. */
+/* Self-hosted fonts (see assets/fonts/README.txt). No third-party requests. */
+@font-face { font-family: "Alfa Slab One"; src: url("../fonts/alfa-slab-one.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Special Elite"; src: url("../fonts/special-elite.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Permanent Marker"; src: url("../fonts/permanent-marker.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+
 :root {
   --ink: #111;
   --paper: #fbfaf6;
   --desk: #e9e7e1;
   --tape: rgba(200, 200, 190, .75);
   --gray: #4a4a4a;
-  --type: "Courier New", Courier, ui-monospace, monospace;
-  --cut-a: Impact, "Arial Black", sans-serif;
+  --type: "Special Elite", "Courier New", Courier, ui-monospace, monospace;
+  --cut-a: "Alfa Slab One", Impact, "Arial Black", sans-serif;
   --cut-b: Georgia, "Times New Roman", serif;
   --cut-c: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-  --hand: "Bradley Hand", "Segoe Print", "Comic Sans MS", cursive;
+  --hand: "Permanent Marker", "Bradley Hand", "Segoe Print", "Comic Sans MS", cursive;
 }
 
 *, *::before, *::after { box-sizing: border-box; border-radius: 0; box-shadow: none; }
