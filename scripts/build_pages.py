@@ -363,7 +363,25 @@ yov = head("Starts November 1", "Yovember",
         "location": {"@type": "VirtualLocation", "url": "https://forums.yoyoexpert.com/t/yoyo-boomers-club/381535"},
         "organizer": {"@type": "Organization", "name": "YoYo Boomer Club", "url": SITE},
         "isAccessibleForFree": True}) + "\n" + \
-    section("Last time", "        <p>In November 2024 the club ran a Yovember team on Movember. Here's how that went, and the rest of our fundraising.</p>\n" + more_links([ext("https://us.movember.com/team/2406538", "The 2024 team page"), '<a href="fundraisers.html">All our fundraisers</a>']) + "\n" + BACK)
+    section("Last Time: The 2024 Challenge Board", """        <p class="lead">Set a challenge. Tell the thread. Follow through. The sillier, the better.</p>
+        <p>In November 2024 the club ran Yovember all month. Everybody picked their own challenge, and you could attempt other people's too. Some of the board:</p>""" + checklist([
+        "Grow a Mo. Mustache only, no beards allowed.",
+        "No Shave November. Let your inner caveman show.",
+        "One yo-yo for the month. Or one string, if you like the Fragile Wear-Down Challenge.",
+        "Shorten your string an inch a day. Or grow it until you can go fishing.",
+        "Learn a trick a day. Post a yo-yo meme a day. Tell a dad joke a day.",
+        "Play off-hand all month, or front style only.",
+        "A head grind a day. The \u201cI Love Ibuprofen Challenge.\u201d",
+        "Online YoYo Horse in the thread.",
+        "Eat a Twinkie a day. Walk a mile a day. Do both at once.",
+        "Light your yo-yo on fire. We warned you not to do this one.",
+    ])) + "\n" + \
+    section("Last Time: The Rewards", """        <p>Two ways to win in 2024:</p>""" + checklist([
+        "<strong>Option 1:</strong> finish your own challenge and walk away with a glorious sense of accomplishment.",
+        "<strong>Option 2:</strong> join the YYBC Movember team and raise $20. You earned the chance to buy the G Squared Relic Prototype, engraved for the event, for $50 plus shipping.",
+        "Mo Your Own Way counts. No shaving, fitness challenges and more all count toward the team.",
+        "Throw-Yo made event merch. Tagged #YovemberMovember, #MoAndThrow and #StillMightTalkAboutLawns.",
+    ]) + "\n" + more_links([ext("https://us.movember.com/team/2406538", "The 2024 team page"), '<a href="fundraisers.html">All our fundraisers</a>', '<a href="sponsors.html">Sponsors</a>']) + "\n" + BACK)
 
 
 # ---------------------------------------------------------------- Sponsors
@@ -467,6 +485,8 @@ charter = head("Adopted January 24, 2024", "The Charter", "\u201cWhere Gravity T
             <p>If the Arm Chair Quarterback / Camp Counselor(s) ever change, the club picks a volunteering exemplary or founding member to pass the \u201cYoyo Club Baton.\u201d We are forever!</p>
           </article>
         </div>""") + "\n" + \
+    section("Founding Fathers / Declaration Daughters", """        <p>The forum members who signed on when the charter was adopted, January 24, 2024.</p>
+        <p>AaronW, Abyss, adamantiumpops, archiesdad, Ardeus, Awiggs, Big Billipo, blacklabel9567, Bobparty, Captrogers, Chrizsmh13, cobrajs, ConnorWilkerson, cowmamba, davis25565, digitalcharlie, Doctor_Filthy, fos1, G2-Jake, GnarlyCharlie, Grendel, Hojo-Yoyo, Jdyo, Jhonaker, Joe77, JSERR, kretzschmar, Ksnow, MattC, mattd, Nwarda, Overtinkering, Pun1sh3R, QuickAt0m, RaRa, RBT, redzaku, rizki_yoist, rkalajian, safetypin, Sam, Shapapy, Slestak75, Son-of-Morris, TryCatchThrow, Veedo, vinniekowalski, Woodyrson, Yodaddyo</p>""") + "\n" + \
     section("Read the Whole Thing", """        <p>Three pages, signed off by the founding members.</p>
         <p><a class="btn btn-light" href="assets/documents/YYBC-Charter-2024.pdf">Charter (PDF)</a></p>
         <p class="links"><a href="faq.html">FAQ</a> \u00b7 <a href="sponsors.html">Sponsors</a> \u00b7 <a href="index.html#join">Join the club</a></p>""") 
