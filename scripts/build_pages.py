@@ -46,6 +46,8 @@ def page(fname, title, desc, body):
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="index.html"><img src="assets/images/yybc-logo.png" alt="Yo-Yo Boomer Club" width="800" height="300"></a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Menu">
+      <label for="nav-toggle" class="burger" aria-hidden="true">Menu</label>
       <nav class="nav" aria-label="Main">
         <ul>
           {NAV}

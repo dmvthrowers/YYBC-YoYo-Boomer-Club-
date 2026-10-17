@@ -149,7 +149,19 @@ img { max-width: 100%; height: auto; }
 .logos a:hover, .logos a:focus { background: none; outline: 3px dashed var(--ink); outline-offset: 3px; }
 .logos img { display: block; width: 100%; height: 140px; object-fit: contain; }
 
-@media (max-width: 480px) {
-  .nav ul { gap: 2px 8px; }
-  .nav a { font-size: .74rem; letter-spacing: .04em; padding: 2px 3px; }
+/* Burger menu for narrow screens. CSS only: a hidden checkbox drives it, no scripts. */
+.nav-toggle { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+.burger { display: none; }
+@media (min-width: 981px) { .nav-toggle { display: none; } }
+@media (max-width: 980px) {
+  .burger { display: inline-flex; align-items: center; gap: 10px; border: 3px solid var(--ink); background: var(--paper); color: var(--ink); padding: 6px 12px; font-family: var(--type); font-weight: 700; font-size: .85rem; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; }
+  .burger::before { content: ""; width: 20px; height: 14px; background: linear-gradient(var(--ink) 0 3px, transparent 3px 5.5px, var(--ink) 5.5px 8.5px, transparent 8.5px 11px, var(--ink) 11px 14px); }
+  .nav-toggle:checked + .burger { background: var(--ink); color: var(--paper); }
+  .nav-toggle:checked + .burger::before { background: linear-gradient(var(--paper) 0 3px, transparent 3px 5.5px, var(--paper) 5.5px 8.5px, transparent 8.5px 11px, var(--paper) 11px 14px); }
+  .nav-toggle:focus-visible + .burger { outline: 3px dashed var(--ink); outline-offset: 3px; }
+  .nav { display: none; flex-basis: 100%; }
+  .nav-toggle:checked ~ .nav { display: block; }
+  .nav ul { flex-direction: column; flex-wrap: nowrap; gap: 0; border-top: 3px solid var(--ink); }
+  .nav li { border-bottom: 1px dashed var(--ink); }
+  .nav a { display: block; font-size: 1rem; letter-spacing: .14em; padding: 12px 4px; }
 }
