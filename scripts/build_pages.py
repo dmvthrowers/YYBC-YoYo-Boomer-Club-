@@ -163,7 +163,7 @@ faf24 = head("February 2024 · Our first event", "Fixed Axle February 2024",
 # ---------------------------------------------------------------- MRM 2024
 mrm24 = head("March 2024", "Modern Responsive March 2024",
     "Same four-week Trick-a-Week format, this time on modern responsive yo-yos.") + "\n" + \
-    section("The Logo", pics([fig("assets/images/events/mrm-2024.webp", "Modern Responsive March 2024 logo: the letters mrm in a blocky typeface above the event name and the year.", "The 2024 event logo.", 692, 257)])) + "\n" + \
+    section("The Logo", pics([fig("assets/images/events/mrm-2024.webp", "Modern Responsive March 2024 logo: the letters mrm in a blocky typeface above the event name and the year.", "The 2024 event logo, made by Errant.Giraffe on the forum.", 692, 257)])) + "\n" + \
     section("How it worked", checklist([
         "Four tricks a week and a celebrity guest trick, same as Fixed Axle February.",
         "Same rules: post your video in the thread, sponsor page up front, one prize per person.",
@@ -342,11 +342,14 @@ specs = [
 ]
 spec_li = "\n".join(f"          <li><b>{e(k)}:</b> {e(v)}</li>" for k, v in specs)
 timeline = [
+    ("Oct 9, 2023", "First look at the CAD: 55 x 32 mm, a 3 mm gap and 53 to 54 grams, with cutouts that accept weight rings."),
     ("Oct 2023", "Responsive prototype sent off for fabrication."),
     ("Dec 2023", "V1 prototypes land at G Squared HQ."),
     ("Jan 22, 2024", "Prototypes released into the wild for testing."),
+    ("Mar 25, 2024", "V2 prototype pre-order opens to members: $85, 20 units max, $20 per unit to the club fund."),
     ("Apr 2024", "Unresponsive prototype ordered."),
     ("Jul 2024", "V2 prototype arrives."),
+    ("Aug 9, 2024", "Club update: V2 is good to go toward production, with a member pre-order so every member can get one."),
     ("Nov 2024", "Production order placed."),
     ("Apr 2025", "Production release."),
 ]
@@ -467,7 +470,7 @@ faq_items = [
     ("Do I have to be old to be a Yoyo Boomer?", "No. Boomer is a state of mind, not an age. Claim the title and you're a Boomer."),
     ("What does it cost?", "Nothing. No dues, no age check, no tryouts."),
     ("How do I join?", "Post in the club thread on the YoYoExpert forums and say you're in. We'll say welcome to the club."),
-    ("Where does the club meet?", "Online. The club thread on the YoYoExpert forums is home base. We also use Discord for chat, YouTube for event videos and Instagram for photos. The Linktree has all the links."),
+    ("Where does the club meet?", "Online. About once a month there\u2019s a club meeting on Zoom. Camera is optional, and you can talk or type in the chat. The club thread on the YoYoExpert forums is home base. We also use Discord for chat, YouTube for event videos and Instagram for photos. The Linktree has all the links."),
     ("What is Yovember?", "Our November fundraiser. It starts November 1: grow a stash, talk yo-yo, throw tricks and support men's health."),
     ("Can I do the old challenges?", "Yes. The events archive has the trick lists for every challenge we've run. Do them whenever you like and post in the thread."),
     ("Where does the money go?", "Our holiday fundraiser supports YoYoExpert's Toys for Tots drive, and Yovember supports men's health. Money from club pins and stickers goes back into the club."),
@@ -522,6 +525,7 @@ charter = head("Adopted January 24, 2024", "The Charter", "\u201cWhere Gravity T
             <p>If the Arm Chair Quarterback / Camp Counselor(s) ever change, the club picks a volunteering exemplary or founding member to pass the \u201cYoyo Club Baton.\u201d We are forever!</p>
           </article>
         </div>""") + "\n" + \
+    section("The Official Document", "        <p>On March 11, 2024 the club's \u201cOfficial Yoyo Boomer Document\u201d arrived, with original art by Higby.</p>\n" + more_links([thread("yoyo-boomers-club/381535/2280", "See the post")])) + "\n" + \
     section("Founding Fathers / Declaration Daughters", """        <p>The forum members who signed on when the charter was adopted, January 24, 2024.</p>
         <p>AaronW, Abyss, adamantiumpops, archiesdad, Ardeus, Awiggs, Big Billipo, blacklabel9567, Bobparty, Captrogers, Chrizsmh13, cobrajs, ConnorWilkerson, cowmamba, davis25565, digitalcharlie, Doctor_Filthy, fos1, G2-Jake, GnarlyCharlie, Grendel, Hojo-Yoyo, Jdyo, Jhonaker, Joe77, JSERR, kretzschmar, Ksnow, MattC, mattd, Nwarda, Overtinkering, Pun1sh3R, QuickAt0m, RaRa, RBT, redzaku, rizki_yoist, rkalajian, safetypin, Sam, Shapapy, Slestak75, Son-of-Morris, TryCatchThrow, Veedo, vinniekowalski, Woodyrson, Yodaddyo</p>""") + "\n" + \
     section("Read the Whole Thing", """        <p>Three pages, signed off by the founding members.</p>
@@ -559,6 +563,51 @@ art = head("From the idea folder", "The Art Department",
     ])) + "\n" + \
     section("The Real Thing", "        <p>The logo we ended up with is at the top of every page. Some of these ideas are still floating around on pins and stickers.</p>\n" + more_links(['<a href="charter.html">The charter</a>', '<a href="sponsors.html">Sponsors</a>', '<a href="index.html#join">Join the club</a>']))
 
+# ---------------------------------------------------------------- History
+def hist_li(items):
+    out = []
+    for date, text, n in items:
+        link = f' <a href="{YYE}yoyo-boomers-club/381535/{n}">Post</a>' if n else ""
+        out.append(f"<b>{e(date)}:</b> {text}{link}")
+    return checklist(out)
+
+h2023 = [
+    ("Jul 31", "Cody (Pun1sh3R) starts the club. First reply: \u201cI guess sign me up or whatever.\u201d", 1),
+    ("Sep 1", "The charter-member window closes.", 351),
+    ("Oct 9", "First look at the Workhorse CAD.", 458),
+    ("Oct 20", "The first club meeting, on Zoom.", 626),
+    ("Nov 2", "A motion: make a club shirt and give the proceeds to Toys for Tots. \u201cAny seconds on this Motion?\u201d", 705),
+    ("Nov 17", "The Throw-Yo holiday fundraiser ends with $130 raised.", 811),
+    ("Dec 3", "The club's first donation to the YoYoExpert drive: $70, or 28 yo-yos. Four days later it was 32.", 838),
+    ("Dec 18", "Still waiting on eight Workhorse prototypes. One is set aside for a Pay It Forward.", 895),
+]
+h2024 = [
+    ("Jan 22", "Monthly meetings are for all members. Camera optional. Voice or chat is fine.", 1397),
+    ("Jan 24", "The charter is adopted.", None),
+    ("Jan 30", "The members-only Participation Trophy event is announced, with a Respawn and a Workhorse prototype as prizes.", 1651),
+    ("Feb 3", "Errant.Giraffe posts the Modern Responsive March logo.", 1769),
+    ("Mar 11", "The Official Yoyo Boomer Document arrives, with original art by Higby.", 2280),
+    ("Mar 25", "Workhorse V2 prototype pre-order opens to members.", 2564),
+    ("Apr 3", "Club meeting recap: the club will get more selective with sponsors, quality over quantity.", 2708),
+    ("Apr 29", "Unresponsive prototype pre-order opens: 20 units, $100 each, $20 per order to the club fund.", 2923),
+    ("Aug 16", "The club becomes a Bronze sponsor of the Ante Yoyo Cup, paid for with merch and prototype money.", 4002),
+    ("Sep 23", "Workhorse production plan: founding members, members and public colorways. Anything over cost goes back to the club.", 4284),
+    ("Nov 29", "The 2024 Toys for Tots drive merch drops.", 5206),
+    ("Dec 28", "Planning Fixed Axle February 2025 starts, and members are asked for themes.", 5569),
+]
+h2025 = [
+    ("Jan 13", "Word that the Workhorse won't be ready for Modern Responsive March.", 5749),
+    ("Apr 17", "The production Workhorse lands.", 6486),
+    ("Jul 3", "The Operator prototype V2 pre-order opens: 9 units minimum, 18 max, $110 each.", 6940),
+    ("Oct 20", "A Workhorse Lite is floated, which would need 40 pre-orders. New members join the list.", 7245),
+]
+hist = head("2023 to now", "The Story So Far",
+    "A timeline of the club, pulled from the forum thread where it all started. Click Post to read the original.") + "\n" + \
+    section("2023", hist_li(h2023), "y2023") + "\n" + \
+    section("2024", hist_li(h2024), "y2024") + "\n" + \
+    section("2025", hist_li(h2025), "y2025") + "\n" + \
+    section("Keep Reading", "        <p>The thread has more than 7,000 posts. This is the short version.</p>\n" + more_links([thread("yoyo-boomers-club/381535", "The whole thread"), '<a href="events.html">Every event</a>', '<a href="workhorse.html">The Workhorse</a>', '<a href="charter.html">The charter</a>']))
+
 pages = {
     "events.html": ("Events", "What's coming up and every YoYo Boomer Club challenge since 2023, with trick lists and threads.", events),
     "faf-2024.html": ("Fixed Axle February 2024", "The club's first event: four weeks of fixed axle tricks and guest tricks.", faf24),
@@ -569,6 +618,7 @@ pages = {
     "faf-2026.html": ("Fixed Axle February 2026", "Seven tricks, all month, no weekly deadlines.", faf26),
     "mrm-2026.html": ("Modern Responsive March 2026", "A Fallout-themed, nine-trick, month-long ladder.", mrm26),
     "faq.html": ("FAQ", "Short answers about the YoYo Boomer Club: who can join, what it costs, where it meets, Yovember and more.", faq),
+    "history.html": ("The Story So Far", "A timeline of the YoYo Boomer Club from July 2023 on, with links to the original posts on the YoYoExpert forum.", hist),
     "art.html": ("The Art Department", "Sketches, mascots and mock logos from the YoYo Boomer Club's archived ideas: turtles, bombs and lawn mowers.", art),
     "charter.html": ("Charter", "The YoYo Boomer Club charter, adopted January 24, 2024: who we are, how we meet, and the get-off-my-lawn clause.", charter),
     "privacy.html": ("Privacy", "The YoYo Boomer Club site collects nothing about you: no forms, cookies, analytics or trackers.", privacy),
