@@ -124,3 +124,7 @@ section.join h2 { background: var(--paper); color: var(--ink); transform: rotate
 .strip { background: var(--ink); color: var(--paper); border-bottom: 3px solid var(--paper); padding: 8px 0; font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; }
 .strip a { color: var(--paper); }
 .strip a:hover, .strip a:focus { background: var(--paper); color: var(--ink); }
+
+/* Long lists (sponsor wall) flow into columns on wide screens */
+#past .checklist { max-width: none; columns: 2 280px; column-gap: 40px; }
+#past .checklist li { break-inside: avoid; }
