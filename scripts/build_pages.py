@@ -277,7 +277,7 @@ y2024 = [
     entry("Dec 2024", "Holiday fundraiser", "$1,300 for Toys for Tots.", "fundraisers.html#2024"),
 ]
 y2023 = [
-    entry("Jul 31, 2023", "The club starts", "A motion, a second, and the Ayes had it.", YYE + "yoyo-boomers-club/381535", True),
+    entry("Jul 31, 2023", "The club starts", "Cody posts the call for charter members. First reply: \u201cSign me up or whatever.\u201d", YYE + "yoyo-boomers-club/381535", True),
     entry("Nov–Dec 2023", "Holiday fundraiser", "$130 for Toys for Tots, 52 yo-yos.", "fundraisers.html#2023"),
 ]
 events = head("The archive", "Events", "What's coming, and every challenge we've run, with the trick lists and the threads, so you can still do them on your own time.") + "\n" + \
