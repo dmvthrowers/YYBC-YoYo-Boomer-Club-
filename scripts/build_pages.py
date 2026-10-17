@@ -16,7 +16,7 @@ NAV = """<li><a href="index.html#about">ABOUT</a></li>
           <li><a href="history.html">HISTORY</a></li>
           <li><a href="events.html">EVENTS</a></li>
           <li><a href="fundraisers.html">FUNDRAISERS</a></li>
-          <li><a href="workhorse.html">WORKHORSE</a></li>
+          <li><a href="projects.html">PROJECTS</a></li>
           <li><a href="sponsors.html">SPONSORS</a></li>
           <li><a href="charter.html">CHARTER</a></li>
           <li><a href="art.html">ART</a></li>
@@ -593,25 +593,111 @@ h2024 = [
     ("Feb\u2013Mar", "Fixed Axle February and Modern Responsive March go live. Matt Mullins hosts every video and signs off the same way each time: \u201cPeace, Love, and Chicken Grease.\u201d", None),
     ("Mar 11", "The Official Yoyo Boomer Document arrives, with original art by Higby.", 2280),
     ("Mar 25", "Workhorse V2 prototype pre-order opens to members.", 2564),
+    ("Mar 19", "Cody asks what the club wants in an unresponsive yo-yo. It becomes the Operator.", 2430),
     ("Apr 3", "Club meeting recap: the club will get more selective with sponsors, quality over quantity.", 2708),
     ("Apr 29", "Unresponsive prototype pre-order opens: 20 units, $100 each, $20 per order to the club fund.", 2923),
+    ("Apr 22", "Participation Trophy winners are drawn: Errant.Giraffe takes the Ti Respawn and Joe77 takes the Workhorse V2 prototype.", 2833),
+    ("Jul 23", "YYBC Dead 'Orses, handmade wooden yo-yos from Spinworthy, go up for sale.", 3691),
     ("Aug 16", "The club becomes a Bronze sponsor of the Ante Yoyo Cup, paid for with merch and prototype money.", 4002),
     ("Sep 23", "Workhorse production plan: founding members, members and public colorways. Anything over cost goes back to the club.", 4284),
+    ("Oct 1", "G Squared live-tests the unresponsive prototypes.", 4344),
     ("Nov 29", "The 2024 Toys for Tots drive merch drops.", 5206),
+    ("Dec 7", "A member's nine new-in-box G Squared unresponsives go to auction for Toys for Tots.", 5238),
     ("Dec 28", "Planning Fixed Axle February 2025 starts, and members are asked for themes.", 5569),
 ]
 h2025 = [
     ("Jan 13", "Word that the Workhorse won't be ready for Modern Responsive March.", 5749),
+    ("Apr 15", "Operator V2 goes back on the drawing board.", 6455),
     ("Apr 17", "The production Workhorse lands.", 6486),
+    ("Jun 4", "Members vote the Three Horse Throw as the 2025 commemorative glass.", 6876),
     ("Jul 3", "The Operator prototype V2 pre-order opens: 9 units minimum, 18 max, $110 each.", 6940),
     ("Oct 20", "A Workhorse Lite is floated, which would need 40 pre-orders. New members join the list.", 7245),
 ]
 hist = head("2023 to now", "The Story So Far",
-    "A timeline of the club, pulled from the forum thread where it all started. Click Post to read the original.") + "\n" + \
+    "A timeline of the club, pulled from the forum thread where it all started. Click Post to read the original. Projects have their own page: " + '<a href="projects.html">The Workshop</a>.') + "\n" + \
     section("2023", hist_li(h2023), "y2023") + "\n" + \
     section("2024", hist_li(h2024), "y2024") + "\n" + \
     section("2025", hist_li(h2025), "y2025") + "\n" + \
     section("Keep Reading", "        <p>The thread has more than 7,000 posts. This is the short version.</p>\n" + more_links([thread("yoyo-boomers-club/381535", "The whole thread"), '<a href="events.html">Every event</a>', '<a href="workhorse.html">The Workhorse</a>', '<a href="charter.html">The charter</a>']))
+
+# ---------------------------------------------------------------- Projects
+def post(n, text="Post"):
+    return f'<a href="{YYE}yoyo-boomers-club/381535/{n}">{text}</a>'
+
+SHOP = "https://throw-yo.com/product-category/yybc/"
+projects = head("Yo-yos, merch and one-offs", "The Workshop",
+    "Everything the club has built besides events. Members pay for the prototypes, and what's left goes back into the club.") + "\n" + \
+    section("Club Yo-Yos", """        <div class="grid">
+          <article class="card">
+            <p class="era">With G Squared</p>
+            <h3><a href="workhorse.html">The Workhorse</a></h3>
+            <p>Our first club yo-yo. One throw for 0A and 1A, from a CAD file in October 2023 to production in April 2025.</p>
+          </article>
+          <article class="card">
+            <p class="era">With G Squared</p>
+            <h3><a href="#operator">The Operator</a></h3>
+            <p>The YYBC organic unresponsive. A prototype in 2024, a second version on the way.</p>
+          </article>
+          <article class="card">
+            <p class="era">With Spinworthy</p>
+            <h3><a href="#orse">Dead 'Orse</a></h3>
+            <p>A wooden, bearing-free yo-yo made by hand. It has a very Australian name.</p>
+          </article>
+          <article class="card">
+            <p class="era">Floated</p>
+            <h3><a href="#lite">Workhorse Lite</a></h3>
+            <p>A lighter, limited run. Needs 40 pre-orders to happen.</p>
+          </article>
+        </div>""") + "\n" + \
+    section("The Operator", checklist([
+        "<b>Mar 19, 2024:</b> Cody asks the club what it wants in a Boomer unresponsive. " + post(2430) + ". An early name idea back in November 2023 was The Flux Capacitor.",
+        "<b>Apr 29 to May 2, 2024:</b> prototype pre-order for members. 55.7 mm across, 43 mm wide, 63.5 g, G20 pads, diamond blasted, with a Boss Ripper bearing. 20 units max, $100 each shipped in the US, $20 of each order to the club fund. " + post(2923),
+        "<b>Oct 1, 2024:</b> G Squared live-tests the unresponsive prototypes. " + post(4344),
+        "<b>Apr 15, 2025:</b> Operator V2 goes back to the drawing board. The catch zone opens up a little and some weight moves to the rim. " + post(6455),
+        "<b>Jul 3, 2025:</b> V2 pre-order opens. 9 units minimum, 18 max, $110 each, $60 down and $50 on shipping. About a four month lead time. " + post(6940),
+    ]), "operator") + "\n" + \
+    section("Dead 'Orse", checklist([
+        "In Australia, ketchup is “dead 'orse.” Spinworthy's Glen offered the club a handmade wooden yo-yo with no bearing, and the name stuck. March 2024. " + post(2152),
+        "<b>Jul 23, 2024:</b> YYBC Dead 'Orses go up for sale. " + post(3691),
+        "<b>Aug 2024:</b> a second batch in golden wattle, Tasmanian blackwood and maple. A golden wattle one weighed 60 g and was $100 shipped to the US. " + post(4027),
+        "A prototype Dead 'Orse went around as a Pay It Forward through 2025.",
+    ]), "orse") + "\n" + \
+    section("Workhorse Lite", checklist([
+        "<b>Jun 2025:</b> Cody says the club will probably do a Workhorse Lite. " + post(6927),
+        "<b>Oct 20, 2025:</b> it needs a pre-order of 40 units. The list started that day, with 33 more to go. " + post(7261),
+        "<b>Also on the list:</b> a titanium Workhorse (“at least a year or two out,” October 2025), a Workhorse with fingerspin, and small runs of the original when the version changes. " + post(7222),
+    ]), "lite") + "\n" + \
+    section("The One That Got Away", "        <p>On day one the idea was a club engraving on the Metal Harbinger, the MK1 and Spinworthy collab. It didn't happen. Somebody said it best: “It's not like we'll never have a club yoyo.” And they got one.</p>\n" + more_links([post(19, "The idea"), post(52, "The reply")])) + "\n" + \
+    section("How a Prototype Gets Funded", checklist([
+        "Members pay for the experiment. Half goes down to place the order, the other half is due when the yo-yos are ready.",
+        "The people paying get a private group message to make decisions, like the prototype's color, and to give feedback.",
+        "In Cody's words: all prototypes with YYBC have been completed this way. “Self funded if you will.” " + post(6463),
+        "A little from each unit goes into the club fund. That money helped pay for sponsoring AYYC.",
+    ])) + "\n" + \
+    section("Pay It Forward", checklist([
+        "A Pay It Forward is a box of yo-yos that travels from member to member. You play it for a few weeks, then ship it to the next person who asks.",
+        "<b>Dec 18, 2023:</b> the first Workhorse prototype PIF, with weight rings, a bearing blank and a slimmer bearing, so the first people to try it could send feedback. " + post(895),
+        "<b>Nov 29, 2024:</b> three Boomer PIFs were active: Workhorse V1, Workhorse V2 and a Dead 'Orse prototype. Volunteer in the thread when the one you want comes up. " + post(5200),
+    ])) + "\n" + \
+    section("Merch", checklist([
+        "<b>Boomer Rope:</b> the unofficially official club string, from Throw-Yo.",
+        "<b>Stickers and holo stickers:</b> in 3x3, 4x4 and 5x5, plus a Boomers Rock sticker.",
+        "<b>Shirts, hoodies and a dad hat</b> with the Boomer logo, including a Modern Responsive Max tee for March 2024.",
+        "<b>Buttons:</b> pricey, with all profits going to the club.",
+        "<b>Boomer Weight:</b> a 3D-printed counterweight made for 5A May 2024. The first print came in at 17 g.",
+        "<b>Commemorative glasses:</b> the 2024 Workhorse glass, and in 2025 the voters picked the Three Horse Throw.",
+        "<b>Wrapping paper</b> in December 2024, with all profits going to Toys for Tots.",
+    ]) + "\n" + more_links([ext(SHOP, "The YYBC shop at Throw-Yo")]), "merch") + "\n" + \
+    section("One-Off Events", checklist([
+        "<b>Participation Trophy (Feb to Apr 2024):</b> a members-only drawing that ran alongside Fixed Axle February and Modern Responsive March. You earned an entry for each week you took part, plus bonus entries for helping run the event. Prizes were a Ti Respawn and a Workhorse V2 prototype. Errant.Giraffe won the Respawn and Joe77 won the prototype. " + post(1651),
+        "<b>ONE July 2024:</b> throw one yo-yo for 31 days. No prizes, no sponsors, no checking. " + '<a href="one-july-2024.html">Read more</a>',
+        "<b>Ante Yoyo Cup sponsorship (Aug 2024):</b> a Bronze sponsor, paid with merch and prototype money. " + post(4002),
+        "<b>Toys for Tots auction (Dec 2024):</b> a member put up nine new-in-box G Squared unresponsives on the G2 Discord, and every dollar went to the drive. " + post(5232),
+        "<b>Movember relic (Dec 2024):</b> members who raised $20 could buy an engraved G Squared relic for $50 plus shipping. " + post(5496),
+        "<b>5A May 2025:</b> post a video of a 5A trick for a shot at a Throw-Yo gummy counterweight. " + post(6598),
+        "<b>Yovember 2025:</b> the team page went back up, kept simple, with member-posted challenges. " + post(7285),
+    ]) + "\n" + more_links(['<a href="events.html">All events</a>', '<a href="fundraisers.html">Fundraisers</a>', '<a href="yovember.html">Yovember</a>']), "oneoffs") + "\n" + \
+    section("Want In?", '        <p class="lead">Every one of these started with somebody saying “what if.”</p>\n        <p>Bring ideas to the thread or the monthly meeting.</p>\n' + more_links(['<a href="index.html#join">Join the club</a>', '<a href="history.html">The timeline</a>', thread("yoyo-boomers-club/381535", "The thread")]))
 
 pages = {
     "events.html": ("Events", "What's coming up and every YoYo Boomer Club challenge since 2023, with trick lists and threads.", events),
@@ -623,6 +709,7 @@ pages = {
     "faf-2026.html": ("Fixed Axle February 2026", "Seven tricks, all month, no weekly deadlines.", faf26),
     "mrm-2026.html": ("Modern Responsive March 2026", "A Fallout-themed, nine-trick, month-long ladder.", mrm26),
     "faq.html": ("FAQ", "Short answers about the YoYo Boomer Club: who can join, what it costs, where it meets, Yovember and more.", faq),
+    "projects.html": ("The Workshop", "Every YoYo Boomer Club project besides events: the Workhorse, the Operator, Dead 'Orse, Pay It Forward, merch and one-off events.", projects),
     "history.html": ("The Story So Far", "A timeline of the YoYo Boomer Club from July 2023 on, with links to the original posts on the YoYoExpert forum.", hist),
     "art.html": ("The Art Department", "Sketches, mascots and mock logos from the YoYo Boomer Club's archived ideas: turtles, bombs and lawn mowers.", art),
     "charter.html": ("Charter", "The YoYo Boomer Club charter, adopted January 24, 2024: who we are, how we meet, and the get-off-my-lawn clause.", charter),
