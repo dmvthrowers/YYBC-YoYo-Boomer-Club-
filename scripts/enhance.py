@@ -146,7 +146,7 @@ def sitemap(pages):
     prio = {"index.html": ("weekly", "1.0"), "yovember.html": ("weekly", "0.9"),
             "events.html": ("monthly", "0.8"), "fundraisers.html": ("monthly", "0.8"),
             "workhorse.html": ("monthly", "0.7"), "sponsors.html": ("monthly", "0.7"),
-            "faq.html": ("monthly", "0.6"), "privacy.html": ("yearly", "0.3")}
+            "charter.html": ("yearly", "0.6"), "faq.html": ("monthly", "0.6"), "privacy.html": ("yearly", "0.3")}
     rows = ['<?xml version="1.0" encoding="UTF-8"?>',
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for fn in pages:
@@ -163,7 +163,7 @@ def main():
     for fn in pages:
         process(fn)
     order = ["index.html", "events.html", "fundraisers.html", "workhorse.html", "sponsors.html",
-             "yovember.html", "faq.html", "privacy.html"]
+             "yovember.html", "charter.html", "faq.html", "privacy.html"]
     rest = [p for p in pages if p not in order and p != "404.html"]
     sitemap([p for p in order if p in pages] + rest)
     print(f"enhanced {len(pages)} pages")

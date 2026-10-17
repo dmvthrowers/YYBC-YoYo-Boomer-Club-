@@ -17,6 +17,7 @@ NAV = """<li><a href="index.html#about">ABOUT</a></li>
           <li><a href="fundraisers.html">FUNDRAISERS</a></li>
           <li><a href="workhorse.html">WORKHORSE</a></li>
           <li><a href="sponsors.html">SPONSORS</a></li>
+          <li><a href="charter.html">CHARTER</a></li>
           <li><a href="index.html#join">JOIN</a></li>"""
 
 def page(fname, title, desc, body):
@@ -435,6 +436,41 @@ privacy = head("Effective October 2026", "Privacy", "This site doesn't collect a
     section("Who else sees your visit", "        <p>The site is hosted on GitHub Pages, and GitHub may keep ordinary server logs of visits under its own privacy policy. Links on this site go to other places like YouTube, Instagram, YoYoExpert, Linktree and Throw-Yo. Once you click through, their policies apply, not ours.</p>") + "\n" + \
     section("If you email us", "        <p>If you email <a href=\"mailto:yoyoboomerclub@gmail.com\">yoyoboomerclub@gmail.com</a>, we read it and answer it. We don't sell or share your email address.</p>\n        <p>Questions about this page? Same email.</p>")
 
+# ---------------------------------------------------------------- Charter
+charter = head("Adopted January 24, 2024", "The Charter", "\u201cWhere Gravity Takes a Break, and So Do We Occasionally.\u201d Eight articles, one lawn.") + "\n" + \
+    section("The short version", checklist([
+        "<strong>Who:</strong> all ages, any yo-yo, anyone who shares the club's values.",
+        "<strong>Meetings:</strong> around once a month, online, for ease of access.",
+        "<strong>Activities:</strong> workshops, themed challenges, casual talk about yo-yo techniques, and bourbon.",
+        "<strong>Culture:</strong> open-minded, funny, helpful and courteous. Set a good example.",
+        "<strong>Decisions:</strong> by consensus on the YYE forum or at the monthly meets. Everyone's input is welcome.",
+    ])) + "\n" + \
+    section("The Good Clauses", """        <div class="grid">
+          <article class="card">
+            <p class="era">Article II, Section 3</p>
+            <h3>\u201cGet Off My Lawn\u201d</h3>
+            <p>Members are allowed to throw in a \u201cget off my lawn\u201d remark when necessary to add to the \u201cBoomer\u201d spirit.</p>
+          </article>
+          <article class="card">
+            <p class="era">Article II, Section 3.5</p>
+            <h3>\u201c\u2026and Don\u2019t Come Back\u201d</h3>
+            <p>Leave any time with no burned bridges. The YYBC will welcome you back with open arms.</p>
+          </article>
+          <article class="card">
+            <p class="era">Article VI</p>
+            <h3>Amendments</h3>
+            <p>The charter may be amended on a whim or when deemed necessary. Most importantly, have fun, love your throws, and your people.</p>
+          </article>
+          <article class="card">
+            <p class="era">Article VII, Section 3</p>
+            <h3>Splitting the Atom</h3>
+            <p>If the Arm Chair Quarterback / Camp Counselor(s) ever change, the club picks a volunteering exemplary or founding member to pass the \u201cYoyo Club Baton.\u201d We are forever!</p>
+          </article>
+        </div>""") + "\n" + \
+    section("Read the Whole Thing", """        <p>Three pages, signed off by the founding members.</p>
+        <p><a class="btn btn-light" href="assets/documents/YYBC-Charter-2024.pdf">Charter (PDF)</a></p>
+        <p class="links"><a href="faq.html">FAQ</a> \u00b7 <a href="sponsors.html">Sponsors</a> \u00b7 <a href="index.html#join">Join the club</a></p>""") 
+
 pages = {
     "events.html": ("Events", "What's coming up and every YoYo Boomer Club challenge since 2023, with trick lists and threads.", events),
     "faf-2024.html": ("Fixed Axle February 2024", "The club's first event: four weeks of fixed axle tricks and guest tricks.", faf24),
@@ -445,6 +481,7 @@ pages = {
     "faf-2026.html": ("Fixed Axle February 2026", "Seven tricks, all month, no weekly deadlines.", faf26),
     "mrm-2026.html": ("Modern Responsive March 2026", "A Fallout-themed, nine-trick, month-long ladder.", mrm26),
     "faq.html": ("FAQ", "Short answers about the YoYo Boomer Club: who can join, what it costs, where it meets, Yovember and more.", faq),
+    "charter.html": ("Charter", "The YoYo Boomer Club charter, adopted January 24, 2024: who we are, how we meet, and the get-off-my-lawn clause.", charter),
     "privacy.html": ("Privacy", "The YoYo Boomer Club site collects nothing about you: no forms, cookies, analytics or trackers.", privacy),
     "sponsors.html": ("Sponsors", "The companies behind the YoYo Boomer Club: club sponsors, this year's event sponsors, and past event sponsors and donors.", spons),
     "yovember.html": ("Yovember", "Yovember starts November 1: grow a stash, talk yo-yo, throw tricks and raise money for men's health.", yov),
