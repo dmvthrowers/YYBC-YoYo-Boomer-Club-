@@ -113,6 +113,21 @@ def ladder(tricks):
         rows.append(f"          <li>{n}{w}</li>")
     return '        <ol class="ladder">\n' + "\n".join(rows) + "\n        </ol>"
 
+
+def fig(src, alt, caption, w, h, cls=""):
+    c = f' class="pic {cls}"' if cls else ' class="pic"'
+    return f'        <figure{c}><img src="{src}" alt="{e(alt)}" width="{w}" height="{h}" loading="lazy"><figcaption>{caption}</figcaption></figure>'
+
+def pics(figs):
+    return '        <div class="pics">\n' + "\n".join(figs) + "\n        </div>"
+
+def logo_wall(items):
+    out = ['        <ul class="logos">']
+    for href, src, alt, w, h in items:
+        out.append(f'          <li><a href="{e(href)}"><img src="{src}" alt="{e(alt)}" width="{w}" height="{h}" loading="lazy"></a></li>')
+    out.append("        </ul>")
+    return "\n".join(out)
+
 def more_links(links):
     return '        <p class="links">' + " · ".join(links) + "</p>"
 
@@ -132,6 +147,10 @@ for wk, date, tricks, guest, slug in faf24_weeks:
 inner.append("        </div>")
 faf24 = head("February 2024 · Our first event", "Fixed Axle February 2024",
     "The club's first big event. Four weeks, four tricks a week, one celebrity guest trick each week, all on a fixed axle.") + "\n" + \
+    section("The Art", pics([
+        fig("assets/images/events/faf-2024-butterfly.png", "Fixed Axle February 2024 logo: a butterfly drawn as a fixed axle yo-yo, wings outlined in black, with YYBC and 2024 on its body.", "The 2024 event logo.", 720, 720),
+        fig("assets/images/events/faf-2024-banner.jpg", "Fixed Axle February banner: a station wagon in white line art on black, with the words Fixed Axle February, presented by the Yo-Yo Boomers Club.", "The station wagon banner.", 690, 388),
+    ])) + "\n" + \
     section("How it worked", checklist([
         "Four tricks a week, posted to the YoYoExpert thread.",
         "Complete one trick, get one entry in that week's drawing. Complete all four, get one more entry.",
@@ -213,6 +232,9 @@ faf26_tricks = [
 ]
 faf26 = head("February 2026", "Fixed Axle February 2026",
     "Back to basics. One trick ladder for the whole month, no weekly deadlines, no stress. Straight-up blue box Kraft.") + "\n" + \
+    section("Thank You, Sponsors", pics([
+        fig("assets/images/events/faf-2026-sponsors.jpg", "Fixed Axle February 2026 thank-you banner showing the sponsors Boise Wood Works, Layer Infinity, Return Bottoms and Throw-Yo, with their prizes, and the YoYo Boomer Club logo.", "The Fixed Axle February 2026 sponsor banner.", 1100, 619, "wide"),
+    ])) + "\n" + \
     section("How it worked", checklist([
         "Seven tricks, all month. Do them in any order you like.",
         "One video per trick, one video for all of them, or anything in between.",
@@ -327,6 +349,9 @@ timeline = [
 tl = "\n".join(f"          <li><b>{e(a)}:</b> {e(b)}</li>" for a, b in timeline)
 work = head("G Squared × YYBC", "The Workhorse",
     "A yo-yo built by the club with G Squared. One yo-yo that plays both 0A and 1A, with weights you can tune. Prototype to production, and yes, there's a Space Wagon.") + "\n" + \
+    section("The Yo-Yo", pics([
+        fig("assets/images/workhorse.webp", "A folding table covered in rows of Workhorse yo-yos in red, black and blue.", "Workhorse yo-yos in the wild. Photo via The Yoyo Archive.", 375, 500),
+    ])) + "\n" + \
     section("What it is", """        <p>G Squared's design team wanted one yo-yo that plays two styles well and shows what "modern responsive" can mean. You can run it on a 5 mm or 4 mm bearing, or on a bearing blank for the Post Modern Responsive setup, and add 1 to 10 grams of weight rings to tune it.</p>
         <p>The redistributed weight made the biggest difference between V1 and V2. Same size, different feel.</p>""") + "\n" + \
     section("Specs", f'        <ul class="checklist">\n{spec_li}\n        </ul>\n        <p>Measured specs from the production listing.</p>') + "\n" + \
@@ -399,9 +424,16 @@ club_sponsors = [
     ("YoYoExpert", "https://yoyoexpert.com", "Annual club sponsor and home of the club thread."),
 ]
 sponsors_2026 = [
+    ("Boise Wood Works", None, "Fixed Axle February 2026."),
+    ("Layer Infinity", None, "Fixed Axle February 2026."),
     ("ZGRT", "https://zgrt.ca", "Modern Responsive March 2026."),
-    ("Sickburn Yo-Yo Workshop / Return Bottoms", "https://returnbottoms.com", "Modern Responsive March 2026."),
+    ("Sickburn Yo-Yo Workshop / Return Bottoms", "https://returnbottoms.com", "Fixed Axle February and Modern Responsive March 2026."),
     ("Throw-Yo", "https://throw-yo.com", "Fixed Axle February and Modern Responsive March 2026."),
+]
+logos_2026 = [
+    ("https://zgrt.ca", "assets/images/sponsors/zgrt.png", "ZGRT logo", 560, 259),
+    ("https://returnbottoms.com", "assets/images/sponsors/return-bottoms.jpg", "Return Bottoms logo: a peach with a heart-shaped bottom", 640, 387),
+    ("https://throw-yo.com", "assets/images/sponsors/throw-yo.jpg", "Throw-Yo logo", 640, 166),
 ]
 past = [
     ("A Round Square", None), ("DMV Throwers", "https://dmvthrowers.club"), ("DocPop", None), ("Ded Hed Designs", "https://dedheddesigns.com"),
@@ -414,7 +446,7 @@ past_li = [ (ext(u, n) if u else e(n)) for n, u in past ]
 spons = head("Thank you", "Sponsors",
     "These folks put real yo-yos, strings and money behind a club that started as a joke on a forum. Go buy their stuff.") + "\n" + \
     section("Club sponsors", sponsor_cards(club_sponsors) + "\n        <p>Annual sponsors who back everything we do.</p>", "club") + "\n" + \
-    section("This year: 2026", sponsor_cards(sponsors_2026), "now") + "\n" + \
+    section("This year: 2026", logo_wall(logos_2026) + "\n" + sponsor_cards(sponsors_2026), "now") + "\n" + \
     section("Past event sponsors and donors", "        <p>Prizes, strings and counterweights donated to our earlier events.</p>\n" + checklist(past_li) + "\n        <p>Plus the club members who donated 3D-printed counterweights and other prizes of their own. You know who you are.</p>", "past") + "\n" + \
     section("Sponsor the club", """        <p class="lead">Every prize in a drawing was a company saying yes to a very silly idea.</p>
         <ul class="checklist">
@@ -491,6 +523,24 @@ charter = head("Adopted January 24, 2024", "The Charter", "\u201cWhere Gravity T
         <p><a class="btn btn-light" href="assets/documents/YYBC-Charter-2024.pdf">Charter (PDF)</a></p>
         <p class="links"><a href="faq.html">FAQ</a> \u00b7 <a href="sponsors.html">Sponsors</a> \u00b7 <a href="index.html#join">Join the club</a></p>""") 
 
+# ---------------------------------------------------------------- Art
+A = "assets/images/art/"
+art = head("From the idea folder", "The Art Department",
+    "Sketches, mascots and mock logos from the club's archived ideas. Every club logo starts as a bad idea in a notebook.") + "\n" + \
+    section("Mascot Contenders", pics([
+        fig(A + "turtle-sketch.webp", "Pencil sketch of a turtle with mechanical arms and the letters Y.Y.B.C. above it, next to two red yo-yos and some pens.", "The turtle mascot. It had fans on the forum on day one.", 900, 676),
+        fig(A + "ninja-turtle.webp", "Color drawing of a green ninja turtle in an orange mask, sitting on a cloud and holding a red yo-yo on a string.", "Ninja turtle, with a yo-yo.", 750, 1000),
+        fig(A + "ninja-turtle-2.webp", "Color drawing of the ninja turtle on a cloud with a red yo-yo and a ball of string, with Y.Y.B.C. in green letters above and the artist's signature in the corner.", "Ninja turtle, take two, signed by the artist.", 750, 1000),
+        fig(A + "skull-and-tools.webp", "Pencil sketch of a skull over crossed wrenches and a screwdriver, with the letters YYBC in a burst behind it.", "Skull and tools.", 900, 769),
+    ])) + "\n" + \
+    section("Bombs and Lawns", pics([
+        fig(A + "bomb-sketch.webp", "Pencil sketch of a round black bomb with a lit fuse, circled by the words Yoyo Boomer Club inside a spiky explosion burst.", "A bomb, as in boomer.", 900, 761),
+        fig(A + "bomb-platter.webp", "Black and white sketch of a bomb on a serving platter under a cloche lid, with the letters YY BC beside it.", "Bomb on a platter.", 810, 1000),
+        fig(A + "off-my-lawn.webp", "White silhouette of a person pushing a lawn mower on black, with the letters YYBC and the words Get off my lawn.", "Get off my lawn.", 900, 916),
+        fig(A + "boomer-mower-logo.webp", "Mock logo: a black ring yo-yo with a string, and the words Yo-Yo boomer Club beside a tiny lawn mower marked Get off my lawn.", "A mock logo with a mower.", 900, 676),
+    ])) + "\n" + \
+    section("The Real Thing", "        <p>The logo we ended up with is at the top of every page. Some of these ideas are still floating around on pins and stickers.</p>\n" + more_links(['<a href="charter.html">The charter</a>', '<a href="sponsors.html">Sponsors</a>', '<a href="index.html#join">Join the club</a>']))
+
 pages = {
     "events.html": ("Events", "What's coming up and every YoYo Boomer Club challenge since 2023, with trick lists and threads.", events),
     "faf-2024.html": ("Fixed Axle February 2024", "The club's first event: four weeks of fixed axle tricks and guest tricks.", faf24),
@@ -501,6 +551,7 @@ pages = {
     "faf-2026.html": ("Fixed Axle February 2026", "Seven tricks, all month, no weekly deadlines.", faf26),
     "mrm-2026.html": ("Modern Responsive March 2026", "A Fallout-themed, nine-trick, month-long ladder.", mrm26),
     "faq.html": ("FAQ", "Short answers about the YoYo Boomer Club: who can join, what it costs, where it meets, Yovember and more.", faq),
+    "art.html": ("The Art Department", "Sketches, mascots and mock logos from the YoYo Boomer Club's archived ideas: turtles, bombs and lawn mowers.", art),
     "charter.html": ("Charter", "The YoYo Boomer Club charter, adopted January 24, 2024: who we are, how we meet, and the get-off-my-lawn clause.", charter),
     "privacy.html": ("Privacy", "The YoYo Boomer Club site collects nothing about you: no forms, cookies, analytics or trackers.", privacy),
     "sponsors.html": ("Sponsors", "The companies behind the YoYo Boomer Club: club sponsors, this year's event sponsors, and past event sponsors and donors.", spons),

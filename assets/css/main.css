@@ -132,3 +132,19 @@ section.join h2 { background: var(--paper); color: var(--ink); transform: rotate
 /* Current page in the nav; keyboard focus lands on main after the skip link */
 .nav a[aria-current="page"] { background: var(--ink); color: var(--paper); }
 main:focus { outline: none; }
+
+/* Taped-in pictures and sponsor logos */
+img { max-width: 100%; height: auto; }
+.pics { display: grid; gap: 32px 24px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); align-items: start; margin-top: 24px; }
+.pic { position: relative; margin: 0; max-width: 440px; width: 100%; background: #fff; border: 2px solid var(--ink); padding: 22px 12px 10px; }
+.pic:nth-child(odd) { transform: rotate(-1deg); }
+.pic:nth-child(even) { transform: rotate(1deg); }
+.pic::before { content: ""; position: absolute; top: -12px; left: 50%; width: 80px; height: 22px; margin-left: -40px; background: var(--tape); border: 1px solid rgba(0,0,0,.15); transform: rotate(-3deg); }
+.pic img { display: block; width: 100%; }
+.pic figcaption { font-size: .85rem; letter-spacing: .04em; padding-top: 8px; }
+.pics .wide { grid-column: 1 / -1; max-width: none; }
+.logos { list-style: none; margin: 24px 0 8px; padding: 0; display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); align-items: center; }
+.logos li { border: 2px solid var(--ink); background: #fff; }
+.logos a { display: block; line-height: 0; }
+.logos a:hover, .logos a:focus { background: none; outline: 3px dashed var(--ink); outline-offset: 3px; }
+.logos img { display: block; width: 100%; height: 140px; object-fit: contain; }

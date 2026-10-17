@@ -25,7 +25,7 @@ FOOTER = """  <footer class="site-footer">
     <div class="wrap">
       <p>Peace, Love, and Chicken Grease.</p>
       <p><a href="https://forums.yoyoexpert.com/t/yoyo-boomers-club/381535">YYE thread</a> · <a href="https://www.youtube.com/@YoYoBoomerClub">YouTube</a> · <a href="https://www.instagram.com/boomeryoyoclub">Instagram</a> · <a href="https://linktr.ee/yoyoboomerclub">Linktree</a> · <a href="mailto:yoyoboomerclub@gmail.com">yoyoboomerclub@gmail.com</a></p>
-      <p><a href="faq.html">FAQ</a> · <a href="privacy.html">Privacy</a></p>
+      <p><a href="art.html">Art</a> · <a href="faq.html">FAQ</a> · <a href="privacy.html">Privacy</a></p>
     </div>
   </footer>"""
 
@@ -146,7 +146,7 @@ def sitemap(pages):
     prio = {"index.html": ("weekly", "1.0"), "yovember.html": ("weekly", "0.9"),
             "events.html": ("monthly", "0.8"), "fundraisers.html": ("monthly", "0.8"),
             "workhorse.html": ("monthly", "0.7"), "sponsors.html": ("monthly", "0.7"),
-            "charter.html": ("yearly", "0.6"), "faq.html": ("monthly", "0.6"), "privacy.html": ("yearly", "0.3")}
+            "charter.html": ("yearly", "0.6"), "art.html": ("yearly", "0.5"), "faq.html": ("monthly", "0.6"), "privacy.html": ("yearly", "0.3")}
     rows = ['<?xml version="1.0" encoding="UTF-8"?>',
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for fn in pages:
@@ -163,7 +163,7 @@ def main():
     for fn in pages:
         process(fn)
     order = ["index.html", "events.html", "fundraisers.html", "workhorse.html", "sponsors.html",
-             "yovember.html", "charter.html", "faq.html", "privacy.html"]
+             "yovember.html", "charter.html", "art.html", "faq.html", "privacy.html"]
     rest = [p for p in pages if p not in order and p != "404.html"]
     sitemap([p for p in order if p in pages] + rest)
     print(f"enhanced {len(pages)} pages")
