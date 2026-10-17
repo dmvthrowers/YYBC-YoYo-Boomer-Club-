@@ -1,0 +1,14 @@
+{
+  "name": "YoYo Boomer Club",
+  "short_name": "YYBC",
+  "description": "A free online yo-yo club. Boomer is a state of mind.",
+  "start_url": "../",
+  "scope": "../",
+  "display": "browser",
+  "background_color": "#fbfaf6",
+  "theme_color": "#111111",
+  "icons": [
+    {"src": "images/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "images/icon-512.png", "sizes": "512x512", "type": "image/png"}
+  ]
+}
