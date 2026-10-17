@@ -163,6 +163,7 @@ faf24 = head("February 2024 · Our first event", "Fixed Axle February 2024",
 # ---------------------------------------------------------------- MRM 2024
 mrm24 = head("March 2024", "Modern Responsive March 2024",
     "Same four-week Trick-a-Week format, this time on modern responsive yo-yos.") + "\n" + \
+    section("The Logo", pics([fig("assets/images/events/mrm-2024.webp", "Modern Responsive March 2024 logo: the letters mrm in a blocky typeface above the event name and the year.", "The 2024 event logo.", 692, 257)])) + "\n" + \
     section("How it worked", checklist([
         "Four tricks a week and a celebrity guest trick, same as Fixed Axle February.",
         "Same rules: post your video in the thread, sponsor page up front, one prize per person.",
@@ -173,6 +174,7 @@ mrm24 = head("March 2024", "Modern Responsive March 2024",
 # ---------------------------------------------------------------- 2A-pril 2024
 a24 = head("April 2024", "2A-pril 2024",
     "A looping event. Three weeks of two-hand tricks, with guest tricks from some of the best loopers around.") + "\n" + \
+    section("The Logo", pics([fig("assets/images/events/2a-pril-2024.webp", "2A-pril 2024 logo: two black yo-yos joined by one long string in a figure eight, with Yo-Yo Boomer Club and 2A-pril '24 in graffiti lettering.", "The 2024 event logo.", 680, 353)])) + "\n" + \
     section("How it worked", checklist([
         "Start with the sponsor banner. Post the video link in the YoYoExpert thread.",
         "Every trick you finish is one entry. List the tricks in your post or your video description.",
@@ -201,6 +203,7 @@ for wk, date, tricks, taw, slug in fam:
 inner.append("        </div>")
 may24 = head("May 2024", "5A May 2024",
     "Counterweight month. A beginner ladder, a trick of the week, and a freeform round, run with Josh Yee and Mable.") + "\n" + \
+    section("The Logo", pics([fig("assets/images/events/5a-may-2024.webp", "5A May logo: the words 5A May in blocky hand lettering on a yellow circle, next to a white die.", "The 2024 event logo.", 513, 513)])) + "\n" + \
     section("Three ways to play", checklist([
         "Beginner Trick Ladder: three or four beginner tricks a week. One trick is one entry, finishing the whole week is one more.",
         "Trick-a-Week: post the week's trick, get an entry.",
@@ -212,6 +215,7 @@ may24 = head("May 2024", "5A May 2024",
 # ---------------------------------------------------------------- ONE July 2024
 july = head("July 2024", "ONE July 2024",
     "Pick one yo-yo. Throw it all month. Find out if you regret your decisions (spelling on purpose).") + "\n" + \
+    section("The Logo", pics([fig("assets/images/events/one-july-2024.webp", "ONE July 2024 logo: a hand holding up a glowing teal yo-yo, with the words 1 Throw July and YYBC 2024.", "The 2024 event logo.", 720, 720)])) + "\n" + \
     section("The rules", checklist([
         "Choose one yo-yo and share it in the thread. (My preciousssss.)",
         "A pair for 2A or 3A counts as one.",
@@ -351,6 +355,7 @@ work = head("G Squared × YYBC", "The Workhorse",
     "A yo-yo built by the club with G Squared. One yo-yo that plays both 0A and 1A, with weights you can tune. Prototype to production, and yes, there's a Space Wagon.") + "\n" + \
     section("The Yo-Yo", pics([
         fig("assets/images/workhorse.webp", "A folding table covered in rows of Workhorse yo-yos in red, black and blue.", "Workhorse yo-yos in the wild. Photo via The Yoyo Archive.", 375, 500),
+        fig("assets/images/art/space-wagon.webp", "Round Space Wagon badge: a station wagon flying past a moon above a yo-yo, inside a circle reading Yo-Yo Boomer Club.", "The Space Wagon badge. Space Wagon is also a Workhorse colorway.", 700, 700),
     ])) + "\n" + \
     section("What it is", """        <p>G Squared's design team wanted one yo-yo that plays two styles well and shows what "modern responsive" can mean. You can run it on a 5 mm or 4 mm bearing, or on a bearing blank for the Post Modern Responsive setup, and add 1 to 10 grams of weight rings to tune it.</p>
         <p>The redistributed weight made the biggest difference between V1 and V2. Same size, different feel.</p>""") + "\n" + \
@@ -525,6 +530,7 @@ charter = head("Adopted January 24, 2024", "The Charter", "\u201cWhere Gravity T
 
 # ---------------------------------------------------------------- Art
 A = "assets/images/art/"
+EV = "assets/images/events/"
 art = head("From the idea folder", "The Art Department",
     "Sketches, mascots and mock logos from the club's archived ideas. Every club logo starts as a bad idea in a notebook.") + "\n" + \
     section("Mascot Contenders", pics([
@@ -538,6 +544,18 @@ art = head("From the idea folder", "The Art Department",
         fig(A + "bomb-platter.webp", "Black and white sketch of a bomb on a serving platter under a cloche lid, with the letters YY BC beside it.", "Bomb on a platter.", 810, 1000),
         fig(A + "off-my-lawn.webp", "White silhouette of a person pushing a lawn mower on black, with the letters YYBC and the words Get off my lawn.", "Get off my lawn.", 900, 916),
         fig(A + "boomer-mower-logo.webp", "Mock logo: a black ring yo-yo with a string, and the words Yo-Yo boomer Club beside a tiny lawn mower marked Get off my lawn.", "A mock logo with a mower.", 900, 676),
+    ])) + "\n" + \
+    section("Event Logos", pics([
+        fig(EV + "faf-2024-butterfly.png", "Fixed Axle February 2024 logo: a butterfly drawn as a fixed axle yo-yo with YYBC and 2024 on its body.", "Fixed Axle February 2024.", 720, 720),
+        fig(EV + "mrm-2024.webp", "Modern Responsive March 2024 logo: the letters mrm in a blocky typeface above the event name and the year.", "Modern Responsive March 2024.", 692, 257),
+        fig(EV + "2a-pril-2024.webp", "2A-pril 2024 logo: two black yo-yos joined by one long string in a figure eight, with graffiti lettering.", "2A-pril 2024.", 680, 353),
+        fig(EV + "5a-may-2024.webp", "5A May logo: the words 5A May in blocky hand lettering on a yellow circle, next to a white die.", "5A May 2024.", 513, 513),
+        fig(EV + "one-july-2024.webp", "ONE July 2024 logo: a hand holding up a glowing teal yo-yo, with the words 1 Throw July and YYBC 2024.", "ONE July 2024.", 720, 720),
+        fig(EV + "faf-2025.webp", "Fixed Axle February 2025 logo: a mecha robot head under glitchy block lettering, with YYBC 2025 on its helmet and two small yo-yos below.", "Fixed Axle February 2025.", 700, 700),
+    ])) + "\n" + \
+    section("Space Wagon and Stickers", pics([
+        fig(A + "space-wagon.webp", "Round Space Wagon badge: a station wagon flying past a moon above a yo-yo, inside a circle reading Yo-Yo Boomer Club.", "The Space Wagon badge. Also a Workhorse colorway.", 700, 700),
+        fig(A + "stickers.webp", "Three round black and white Yo-Yo Boomer Club logo stickers in different sizes, one with the space wagon.", "Sticker designs.", 700, 992),
     ])) + "\n" + \
     section("The Real Thing", "        <p>The logo we ended up with is at the top of every page. Some of these ideas are still floating around on pins and stickers.</p>\n" + more_links(['<a href="charter.html">The charter</a>', '<a href="sponsors.html">Sponsors</a>', '<a href="index.html#join">Join the club</a>']))
 
