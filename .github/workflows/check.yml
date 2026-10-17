@@ -1,0 +1,21 @@
+name: Check site
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generated pages are up to date
+        run: |
+          python3 scripts/build_pages.py
+          python3 scripts/enhance.py
+          git diff --exit-code -- . ':!sitemap.xml'
+      - name: Static checks
+        run: python3 scripts/check.py

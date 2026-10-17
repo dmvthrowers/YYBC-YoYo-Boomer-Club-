@@ -128,3 +128,7 @@ section.join h2 { background: var(--paper); color: var(--ink); transform: rotate
 /* Long lists (sponsor wall) flow into columns on wide screens */
 #past .checklist { max-width: none; columns: 2 280px; column-gap: 40px; }
 #past .checklist li { break-inside: avoid; }
+
+/* Current page in the nav; keyboard focus lands on main after the skip link */
+.nav a[aria-current="page"] { background: var(--ink); color: var(--paper); }
+main:focus { outline: none; }
