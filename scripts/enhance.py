@@ -24,7 +24,7 @@ EVENT_PAGES = {"faf-2024.html", "mrm-2024.html", "2a-pril-2024.html", "5a-may-20
 FOOTER = """  <footer class="site-footer">
     <div class="wrap">
       <p>Peace, Love, and Chicken Grease.</p>
-      <p><a href="https://forums.yoyoexpert.com/t/yoyo-boomers-club/381535">YYE thread</a> · <a href="https://www.youtube.com/@YoYoBoomerClub">YouTube</a> · <a href="https://www.instagram.com/boomeryoyoclub">Instagram</a> · <a href="https://linktr.ee/yoyoboomerclub">Linktree</a> · <a href="mailto:yoyoboomerclub@gmail.com">yoyoboomerclub@gmail.com</a></p>
+      <p><a href="https://forums.yoyoexpert.com/t/yoyo-boomers-club/381535">YYE thread</a> · <a href="https://www.youtube.com/@YoYoBoomerClub">YouTube</a> · <a href="https://www.instagram.com/boomeryoyoclub">Instagram</a> · <a href="https://www.facebook.com/share/1B2WbuSgQz/">Facebook</a> · <a href="https://www.threads.com/@boomeryoyoclub">Threads</a> · <a href="https://linktr.ee/yoyoboomerclub">Linktree</a> · <a href="mailto:yoyoboomerclub@gmail.com">yoyoboomerclub@gmail.com</a></p>
       <p><a href="projects.html">Projects</a> · <a href="history.html">History</a> · <a href="art.html">Art</a> · <a href="faq.html">FAQ</a> · <a href="privacy.html">Privacy</a></p>
     </div>
   </footer>"""
@@ -52,9 +52,10 @@ def build_head(fn, src):
     url = BASE if fn == "index.html" else BASE + fn
     pre = "/YYBC-YoYo-Boomer-Club-/" if is404 else ""
     img = BASE + "assets/images/og.png"
+    csp = CSP + "; frame-src https://www.youtube-nocookie.com" if fn == "watch.html" else CSP
     L = ['  <meta charset="utf-8">',
          '  <meta name="viewport" content="width=device-width, initial-scale=1">',
-         f'  <meta http-equiv="Content-Security-Policy" content="{a(CSP)}">',
+         f'  <meta http-equiv="Content-Security-Policy" content="{a(csp)}">',
          f"  <title>{a(title)}</title>"]
     if desc:
         L.append(f'  <meta name="description" content="{a(desc)}">')
@@ -95,6 +96,8 @@ def build_head(fn, src):
              "sameAs": ["https://forums.yoyoexpert.com/t/yoyo-boomers-club/381535",
                         "https://www.youtube.com/@YoYoBoomerClub",
                         "https://www.instagram.com/boomeryoyoclub",
+                        "https://www.facebook.com/share/1B2WbuSgQz/",
+                        "https://www.threads.com/@boomeryoyoclub",
                         "https://linktr.ee/yoyoboomerclub"]},
             {"@type": "WebSite", "@id": BASE + "#site", "url": BASE, "name": NAME,
              "publisher": {"@id": BASE + "#org"}}]}, "ld-site"))
@@ -144,7 +147,7 @@ def lastmod(fn):
 
 def sitemap(pages):
     prio = {"index.html": ("weekly", "1.0"), "yovember.html": ("weekly", "0.9"),
-            "events.html": ("monthly", "0.8"), "fundraisers.html": ("monthly", "0.8"),
+            "events.html": ("monthly", "0.8"), "watch.html": ("monthly", "0.7"), "fundraisers.html": ("monthly", "0.8"),
             "workhorse.html": ("monthly", "0.7"), "projects.html": ("monthly", "0.7"), "sponsors.html": ("monthly", "0.7"),
             "charter.html": ("yearly", "0.6"), "art.html": ("yearly", "0.5"), "history.html": ("monthly", "0.6"), "faq.html": ("monthly", "0.6"), "privacy.html": ("yearly", "0.3")}
     rows = ['<?xml version="1.0" encoding="UTF-8"?>',
@@ -162,7 +165,7 @@ def main():
     pages = sorted(os.path.basename(p) for p in glob.glob(os.path.join(ROOT, "*.html")))
     for fn in pages:
         process(fn)
-    order = ["index.html", "events.html", "fundraisers.html", "workhorse.html", "sponsors.html",
+    order = ["index.html", "events.html", "watch.html", "fundraisers.html", "workhorse.html", "sponsors.html",
              "yovember.html", "projects.html", "charter.html", "history.html", "art.html", "faq.html", "privacy.html"]
     rest = [p for p in pages if p not in order and p != "404.html"]
     sitemap([p for p in order if p in pages] + rest)
