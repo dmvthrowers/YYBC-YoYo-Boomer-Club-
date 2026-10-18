@@ -499,7 +499,7 @@ privacy = head("Effective October 2026", "Privacy", "This site doesn't collect a
         "Fonts and images load from this site, not from a third party.",
         "One exception: the Watch page embeds a YouTube player. See below.",
     ])) + "\n" + \
-    section("Who else sees your visit", "        <p>The site is hosted on GitHub Pages, and GitHub may keep ordinary server logs of visits under its own privacy policy. Links on this site go to other places like YouTube, Instagram, YoYoExpert, Linktree and Throw-Yo. Once you click through, their policies apply, not ours.</p>") + "\n" + \
+    section("Who else sees your visit", "        <p>The site is hosted on GitHub Pages, and GitHub may keep ordinary server logs of visits under its own privacy policy. Links on this site go to other places like YouTube, Instagram, Facebook, Threads, YoYoExpert, Linktree and Throw-Yo. Once you click through, their policies apply, not ours.</p>") + "\n" + \
     section("The Watch page", "        <p>The Watch page embeds the club's YouTube channel using YouTube's privacy-enhanced mode (youtube-nocookie.com). The player loads from Google when you open that page, so Google can see that you visited. It shouldn't set tracking cookies until you press play. Every other page on this site loads nothing from outside it. If you'd rather skip it, use the plain link to the channel at the top of that page.</p>") + "\n" + \
     section("If you email us", "        <p>If you email <a href=\"mailto:yoyoboomerclub@gmail.com\">yoyoboomerclub@gmail.com</a>, we read it and answer it. We don't sell or share your email address.</p>\n        <p>Questions about this page? Same email.</p>")
 
@@ -712,6 +712,13 @@ watch = head("The YouTube channel", "Watch", "Event videos, tutorials and giveaw
         <div class="video"><iframe src="{YT_UPLOADS}" title="YoYo Boomer Club on YouTube: latest uploads" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-corner"></iframe></div>
         <p class="links"><a class="btn btn-light" href="{YT_CHANNEL}">Open on YouTube</a></p>
         <p>The player loads from YouTube. If it doesn't show, use the button above. <a href="privacy.html">Privacy</a></p>""".replace("strict-origin-when-corner","strict-origin-when-cross-origin")) + "\n" + \
+    section("Follow Along", "        <p>The club posts in a few places. They're plain links, so nothing loads from them until you click.</p>\n" + checklist([
+        ext(YT_CHANNEL, "YouTube") + ": tutorials and event videos.",
+        ext("https://www.instagram.com/boomeryoyoclub", "Instagram") + ": photos and clips.",
+        ext("https://www.facebook.com/share/1B2WbuSgQz/", "Facebook") + ": the club page.",
+        ext("https://www.threads.com/@boomeryoyoclub", "Threads") + ": quick posts.",
+        ext("https://linktr.ee/yoyoboomerclub", "Linktree") + ": everything else in one place.",
+    ]), "follow") + "\n" + \
     section("What's On The Channel", checklist([
         "<b>Tutorials:</b> the Fixed Axle February and Modern Responsive March videos teach tricks from 0A through responsive. " + post(4636),
         "<b>Event videos:</b> every event kicks off with a video, and the trick lists on the event pages link to the tutorials.",

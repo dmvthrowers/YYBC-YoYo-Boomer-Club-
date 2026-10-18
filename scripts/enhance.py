@@ -24,7 +24,7 @@ EVENT_PAGES = {"faf-2024.html", "mrm-2024.html", "2a-pril-2024.html", "5a-may-20
 FOOTER = """  <footer class="site-footer">
     <div class="wrap">
       <p>Peace, Love, and Chicken Grease.</p>
-      <p><a href="https://forums.yoyoexpert.com/t/yoyo-boomers-club/381535">YYE thread</a> · <a href="https://www.youtube.com/@YoYoBoomerClub">YouTube</a> · <a href="https://www.instagram.com/boomeryoyoclub">Instagram</a> · <a href="https://linktr.ee/yoyoboomerclub">Linktree</a> · <a href="mailto:yoyoboomerclub@gmail.com">yoyoboomerclub@gmail.com</a></p>
+      <p><a href="https://forums.yoyoexpert.com/t/yoyo-boomers-club/381535">YYE thread</a> · <a href="https://www.youtube.com/@YoYoBoomerClub">YouTube</a> · <a href="https://www.instagram.com/boomeryoyoclub">Instagram</a> · <a href="https://www.facebook.com/share/1B2WbuSgQz/">Facebook</a> · <a href="https://www.threads.com/@boomeryoyoclub">Threads</a> · <a href="https://linktr.ee/yoyoboomerclub">Linktree</a> · <a href="mailto:yoyoboomerclub@gmail.com">yoyoboomerclub@gmail.com</a></p>
       <p><a href="projects.html">Projects</a> · <a href="history.html">History</a> · <a href="art.html">Art</a> · <a href="faq.html">FAQ</a> · <a href="privacy.html">Privacy</a></p>
     </div>
   </footer>"""
@@ -96,6 +96,8 @@ def build_head(fn, src):
              "sameAs": ["https://forums.yoyoexpert.com/t/yoyo-boomers-club/381535",
                         "https://www.youtube.com/@YoYoBoomerClub",
                         "https://www.instagram.com/boomeryoyoclub",
+                        "https://www.facebook.com/share/1B2WbuSgQz/",
+                        "https://www.threads.com/@boomeryoyoclub",
                         "https://linktr.ee/yoyoboomerclub"]},
             {"@type": "WebSite", "@id": BASE + "#site", "url": BASE, "name": NAME,
              "publisher": {"@id": BASE + "#org"}}]}, "ld-site"))
