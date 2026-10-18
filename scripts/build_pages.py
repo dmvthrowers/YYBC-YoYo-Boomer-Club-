@@ -15,6 +15,7 @@ e = html.escape
 NAV = """<li><a href="index.html#about">ABOUT</a></li>
           <li><a href="history.html">HISTORY</a></li>
           <li><a href="events.html">EVENTS</a></li>
+          <li><a href="watch.html">WATCH</a></li>
           <li><a href="fundraisers.html">FUNDRAISERS</a></li>
           <li><a href="projects.html">PROJECTS</a></li>
           <li><a href="sponsors.html">SPONSORS</a></li>
@@ -494,10 +495,12 @@ faq = head("Questions", "FAQ", "Short answers to the things people ask before th
 privacy = head("Effective October 2026", "Privacy", "This site doesn't collect anything about you. Here is the short version, and the details.") + "\n" + \
     section("What we collect", checklist([
         "Nothing. The site has no forms, no accounts, no comments and no sign-ups.",
-        "No cookies, no analytics and no ad trackers. The site runs no scripts at all.",
+        "No cookies of our own, no analytics and no ad trackers. The site runs no scripts at all.",
         "Fonts and images load from this site, not from a third party.",
+        "One exception: the Watch page embeds a YouTube player. See below.",
     ])) + "\n" + \
     section("Who else sees your visit", "        <p>The site is hosted on GitHub Pages, and GitHub may keep ordinary server logs of visits under its own privacy policy. Links on this site go to other places like YouTube, Instagram, YoYoExpert, Linktree and Throw-Yo. Once you click through, their policies apply, not ours.</p>") + "\n" + \
+    section("The Watch page", "        <p>The Watch page embeds the club's YouTube channel using YouTube's privacy-enhanced mode (youtube-nocookie.com). The player loads from Google when you open that page, so Google can see that you visited. It shouldn't set tracking cookies until you press play. Every other page on this site loads nothing from outside it. If you'd rather skip it, use the plain link to the channel at the top of that page.</p>") + "\n" + \
     section("If you email us", "        <p>If you email <a href=\"mailto:yoyoboomerclub@gmail.com\">yoyoboomerclub@gmail.com</a>, we read it and answer it. We don't sell or share your email address.</p>\n        <p>Questions about this page? Same email.</p>")
 
 # ---------------------------------------------------------------- Charter
@@ -701,6 +704,21 @@ projects = head("Yo-yos, merch and one-offs", "The Workshop",
     ]) + "\n" + more_links(['<a href="events.html">All events</a>', '<a href="fundraisers.html">Fundraisers</a>', '<a href="yovember.html">Yovember</a>']), "oneoffs") + "\n" + \
     section("Want In?", '        <p class="lead">Every one of these started with somebody saying “what if.”</p>\n        <p>Bring ideas to the thread or the monthly meeting.</p>\n' + more_links(['<a href="index.html#join">Join the club</a>', '<a href="history.html">The timeline</a>', thread("yoyo-boomers-club/381535", "The thread")]))
 
+# ---------------------------------------------------------------- Watch
+YT_CHANNEL = "https://www.youtube.com/@YoYoBoomerClub"
+YT_UPLOADS = "https://www.youtube-nocookie.com/embed/videoseries?list=UU31cBfMjsY66y6UXtZoicuA"
+watch = head("The YouTube channel", "Watch", "Event videos, tutorials and giveaways, all on the club's YouTube channel.") + "\n" + \
+    section("Latest Videos", f"""        <p class="lead">Press play. Use the list in the player to pick another.</p>
+        <div class="video"><iframe src="{YT_UPLOADS}" title="YoYo Boomer Club on YouTube: latest uploads" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-corner"></iframe></div>
+        <p class="links"><a class="btn btn-light" href="{YT_CHANNEL}">Open on YouTube</a></p>
+        <p>The player loads from YouTube. If it doesn't show, use the button above. <a href="privacy.html">Privacy</a></p>""".replace("strict-origin-when-corner","strict-origin-when-cross-origin")) + "\n" + \
+    section("What's On The Channel", checklist([
+        "<b>Tutorials:</b> the Fixed Axle February and Modern Responsive March videos teach tricks from 0A through responsive. " + post(4636),
+        "<b>Event videos:</b> every event kicks off with a video, and the trick lists on the event pages link to the tutorials.",
+        "<b>Giveaways:</b> prize drawings are filmed too, like the Participation Trophy giveaway. " + post(2833),
+        "<b>Matt Mullins hosts.</b> Listen for the sign-off.",
+    ]) + "\n" + more_links([ext(YT_CHANNEL, "The channel on YouTube"), '<a href="events.html">Every event</a>', '<a href="projects.html">The Workshop</a>']))
+
 pages = {
     "events.html": ("Events", "What's coming up and every YoYo Boomer Club challenge since 2023, with trick lists and threads.", events),
     "faf-2024.html": ("Fixed Axle February 2024", "The club's first event: four weeks of fixed axle tricks and guest tricks.", faf24),
@@ -711,6 +729,7 @@ pages = {
     "faf-2026.html": ("Fixed Axle February 2026", "Seven tricks, all month, no weekly deadlines.", faf26),
     "mrm-2026.html": ("Modern Responsive March 2026", "A Fallout-themed, nine-trick, month-long ladder.", mrm26),
     "faq.html": ("FAQ", "Short answers about the YoYo Boomer Club: who can join, what it costs, where it meets, Yovember and more.", faq),
+    "watch.html": ("Watch", "The YoYo Boomer Club YouTube channel, embedded: event videos, tutorials and giveaways.", watch),
     "projects.html": ("The Workshop", "Every YoYo Boomer Club project besides events: the Workhorse, the Operator, Dead 'Orse, Pay It Forward, merch and one-off events.", projects),
     "history.html": ("The Story So Far", "A timeline of the YoYo Boomer Club from July 2023 on, with links to the original posts on the YoYoExpert forum.", hist),
     "art.html": ("The Art Department", "Sketches, mascots and mock logos from the YoYo Boomer Club's archived ideas: turtles, bombs and lawn mowers.", art),

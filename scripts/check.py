@@ -52,6 +52,9 @@ for fn, s in src.items():
             err(fn, f"img without alt: {img[:60]}")
     if re.search(r"<script(?![^>]*ld\+json)", s) or re.search(r'\sstyle="|<style', s):
         err(fn, "inline script or style (blocked by CSP)")
+    for fr in re.findall(r"<iframe\b[^>]*>", s):
+        if fn != "watch.html" or 'src="https://www.youtube-nocookie.com/embed/' not in fr or "title=" not in fr:
+            err(fn, f"unexpected iframe: {fr[:70]}")
     if re.search(r'\son\w+="', s):
         err(fn, "inline event handler")
     for blk in re.findall(r'<script type="application/ld\+json"[^>]*>(.*?)</script>', s, re.S):
